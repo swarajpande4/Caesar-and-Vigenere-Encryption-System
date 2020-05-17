@@ -43,7 +43,8 @@ def generateVigenereKey(text, key):
         if j == keyLength:
             j = 0
 
-        vigenereKey = vigenereKey + key[j]
+        # The characters are made uppercase
+        vigenereKey = vigenereKey + key[j].upper()
         i = i + 1
         j = j + 1
 
@@ -52,7 +53,7 @@ def generateVigenereKey(text, key):
 
 def vigenereEncrypt(text, key):
     # Genrating the Vigenere Key
-    vigenereKey = generateVigenereKey(text, key).upper()
+    vigenereKey = generateVigenereKey(text, key)
     encrypted = ""
 
     # Traversing text
@@ -79,7 +80,7 @@ def vigenereEncrypt(text, key):
 
 def vigenereDecrypt(encrypted, key):
     # Generating the Vigenere Key
-    vigenereKey = generateVigenereKey(encrypted, key).upper()
+    vigenereKey = generateVigenereKey(encrypted, key)
     text = ""
 
     # Traversing encrypted
@@ -102,4 +103,3 @@ def vigenereDecrypt(encrypted, key):
             text = text + currChar
 
     return text
-
