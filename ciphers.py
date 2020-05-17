@@ -52,7 +52,7 @@ def generateVigenereKey(text, key):
 
 
 def vigenereEncrypt(text, key):
-    # Genrating the Vigenere Key
+    # Generating the Vigenere Key
     vigenereKey = generateVigenereKey(text, key)
     encrypted = ""
 
@@ -98,7 +98,7 @@ def vigenereDecrypt(encrypted, key):
             upperChar = chr((ord(currChar) - ord(currKeyChar) + 26) % 26 + 65)
             text = text + upperChar.lower()
 
-        #Other Characters are not Decrypted
+        # Other Characters are not Decrypted
         else:
             text = text + currChar
 
