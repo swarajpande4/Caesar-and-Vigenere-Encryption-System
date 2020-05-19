@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46139cc8-040d-400e-8820-5cc7a1fada8d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ciphers.py" beforeDir="false" afterPath="$PROJECT_DIR$/ciphers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,9 +19,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1byyGf52UJ5qFd3okQsUV5dDt7i" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ciphers.py" />
@@ -107,7 +109,7 @@
       <updated>1589618533419</updated>
       <workItem from="1589618535493" duration="8907000" />
       <workItem from="1589633841746" duration="3247000" />
-      <workItem from="1589708024483" duration="598000" />
+      <workItem from="1589708024483" duration="734000" />
     </task>
     <task id="LOCAL-00001" summary="Updated ciphers">
       <created>1589708408324</created>
@@ -116,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589708408324</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Updated ciphers">
+      <created>1589708639356</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589708639356</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
