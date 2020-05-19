@@ -15,8 +15,8 @@ root.title("C&V Encryption System")
 root.geometry("600x750")
 
 # Heading Label
-headingFont = ("Verdana", 18, "bold")
-heading = Label(root, text="C&V Encryption System", font=headingFont)
-heading.pack(side=TOP, pady=10)
+headingFont = ("Verdana", 20, "bold")
+headingLabel = Label(root, text="C&V Encryption System", font=headingFont, anchor='w')
+headingLabel.grid(row=0, column=0, padx=120, pady=0)
 
 root.mainloop()
