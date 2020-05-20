@@ -3,7 +3,7 @@
 This system encrypts and decrypts Caesar and Vigenere Ciphers using Python.
 
 ## Layout
-
+<img src = 'img/img1.PNG'>
 
 ## Sources 
 https://en.wikipedia.org/wiki/Caesar_cipher \
