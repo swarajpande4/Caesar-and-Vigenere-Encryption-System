@@ -88,16 +88,16 @@ enterText.place(x=30, y=225)
 
 # Enter Key Field
 enterKeyLabel = Label(root, text="Enter Key : ", font=generalFont, anchor='w')
-enterKeyLabel.place(x=30, y=370)
+enterKeyLabel.place(x=30, y=425)
 enterKey = Text(root, height=1, width=67)
 enterKey.place(x=30, y=450)
 
 # Key Instructions Labels
 instructionFont = ("Times", 12, "bold")
 caesarInstructionLabel = Label(root, text="Note : Caesar Numeric Key = Integer", font=instructionFont, anchor='w')
-caesarInstructionLabel.place(x=30, y=395)
+caesarInstructionLabel.place(x=30, y=365)
 vigenereInstructionLabel = Label(root, text="Vigenere Text Key = String", font=instructionFont, anchor='w')
-vigenereInstructionLabel.place(x=76, y=424)
+vigenereInstructionLabel.place(x=76, y=389)
 
 # Execute Button
 executeButton = Button(root, text="Execute", font=generalFont, relief=RAISED, command=executeButtonFunction)
