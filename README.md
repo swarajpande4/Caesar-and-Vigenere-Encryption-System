@@ -2,7 +2,7 @@
 
 This system encrypts and decrypts Caesar and Vigenere Ciphers using Python.
 
-## Image1
+## Layout
 <img src= 'img/img1.PNG'>
 
 ## Sources 
