@@ -5,14 +5,51 @@
 #   Date : 20 May 2020
 
 
-import ciphers
+from ciphers import *
 from tkinter import *
-from tkinter.messagebox import *
+from tkinter import messagebox
+
+
+# Execute Button Function
+def executeButtonFunction():
+    inputText = enterText.get("1.0", "end")
+    inputKey = enterKey.get("1.0", "end")
+    resultText.delete("1.0", "end")
+
+    try:
+        if cipherChoice.get() == 1:
+            if operationChoice.get() == 1:
+                encrypted = caesarEncrypt(inputText, inputKey)
+                resultText.insert("1.0", encrypted)
+            elif operationChoice.get() == 2:
+                decrypted = caesarEncrypt(inputText, 26 - int(inputKey))
+                resultText.insert("1.0", decrypted)
+
+        elif cipherChoice.get() == 2:
+            if operationChoice.get() == 1:
+                encrypted = vigenereEncrypt(inputText, inputKey)
+                resultText.insert("1.0", encrypted)
+            elif operationChoice.get() == 2:
+                decrypted = vigenereDecrypt(inputText, inputKey)
+                resultText.insert("1.0", decrypted)
+
+    except:
+        messagebox.showerror("Error", "Invalid Key")
+        enterKey.delete("1.0", "end")
+
+
+def resetButtonFunction():
+    cipherChoice.set("1")
+    operationChoice.set("1")
+    enterText.delete("1.0", "end")
+    enterKey.delete("1.0", "end")
+    resultText.delete("1.0", "end")
+
 
 # Creating the Window
 root = Tk()
 root.title("C&V Encryption System")
-root.geometry("600x700")
+root.geometry("600x750")
 root.resizable(False, False)
 
 # Heading Label
@@ -53,25 +90,33 @@ enterText.place(x=30, y=225)
 enterKeyLabel = Label(root, text="Enter Key : ", font=generalFont, anchor='w')
 enterKeyLabel.place(x=30, y=370)
 enterKey = Text(root, height=1, width=67)
-enterKey.place(x=30, y=400)
+enterKey.place(x=30, y=450)
+
+# Key Instructions Labels
+instructionFont = ("Times", 12, "bold")
+caesarInstructionLabel = Label(root, text="Note : Caesar Numeric Key = Integer", font=instructionFont, anchor='w')
+caesarInstructionLabel.place(x=30, y=395)
+vigenereInstructionLabel = Label(root, text="Vigenere Text Key = String", font=instructionFont, anchor='w')
+vigenereInstructionLabel.place(x=76, y=424)
 
 # Execute Button
-executeButton = Button(root, text="Execute", font=generalFont, relief=RAISED)
-executeButton.place(x=259, y=430)
+executeButton = Button(root, text="Execute", font=generalFont, relief=RAISED, command=executeButtonFunction)
+executeButton.place(x=259, y=480)
 
 # Result Text Field
 resultTextLabel = Label(root, text="Result Text : ", font=generalFont, anchor='w')
-resultTextLabel.place(x=30, y=465)
+resultTextLabel.place(x=30, y=515)
 resultText = Text(root, height=8, width=67)
-resultText.place(x=30, y=490)
+resultText.place(x=30, y=540)
 
 # Reset Button
-resetButton = Button(root, text="Reset", font=generalFont, relief=RAISED)
-resetButton.place(x=265, y=630)
+resetButton = Button(root, text="Reset", font=generalFont, relief=RAISED, command=resetButtonFunction)
+resetButton.place(x=265, y=680)
 
 # Credit Label
 creditFont = ("Verdana", 8, "bold")
 creditLabel = Label(root, text="Developed by : Swaraj Pande", font=creditFont, anchor='e')
-creditLabel.place(x=400, y=680)
+creditLabel.place(x=400, y=730)
 
 root.mainloop()
+

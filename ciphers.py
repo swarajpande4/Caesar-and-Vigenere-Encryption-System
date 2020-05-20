@@ -9,7 +9,7 @@
 # The Same function can be used to Decrypt a Caesar Cipher using key = 26 - key
 def caesarEncrypt(text, key):
     encrypted = ""
-
+    key = int(key)
     # Traversing text
     for i in range(len(text)):
         currChar = text[i]
