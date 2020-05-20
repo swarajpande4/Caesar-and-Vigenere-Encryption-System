@@ -17,6 +17,7 @@ def executeButtonFunction():
     resultText.delete("1.0", "end")
 
     try:
+        # Caesar Cipher Call
         if cipherChoice.get() == 1:
             if operationChoice.get() == 1:
                 encrypted = caesarEncrypt(inputText, inputKey)
@@ -24,7 +25,7 @@ def executeButtonFunction():
             elif operationChoice.get() == 2:
                 decrypted = caesarEncrypt(inputText, 26 - int(inputKey))
                 resultText.insert("1.0", decrypted)
-
+        # Vigenere Cipher Call
         elif cipherChoice.get() == 2:
             if operationChoice.get() == 1:
                 encrypted = vigenereEncrypt(inputText, inputKey)
@@ -33,11 +34,13 @@ def executeButtonFunction():
                 decrypted = vigenereDecrypt(inputText, inputKey)
                 resultText.insert("1.0", decrypted)
 
+    # Invalid Key
     except:
         messagebox.showerror("Error", "Invalid Key")
         enterKey.delete("1.0", "end")
 
 
+# Reset Button Function
 def resetButtonFunction():
     cipherChoice.set("1")
     operationChoice.set("1")
@@ -51,6 +54,9 @@ root = Tk()
 root.title("C&V Encryption System")
 root.geometry("600x750")
 root.resizable(False, False)
+
+# Setting the Icon
+root.iconbitmap('C:/Caesar-and-Vigenere-Encryption-System-Using-Python-GUI/img/icon.ico')
 
 # Heading Label
 headingFont = ("Verdana", 20, "bold")

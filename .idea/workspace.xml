@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="46139cc8-040d-400e-8820-5cc7a1fada8d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/C&amp;V Encryption System.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -119,6 +121,8 @@
       <workItem from="1589958538146" duration="3265000" />
       <workItem from="1589962853017" duration="758000" />
       <workItem from="1589963932293" duration="253000" />
+      <workItem from="1589974671403" duration="615000" />
+      <workItem from="1589975308903" duration="257000" />
     </task>
     <task id="LOCAL-00001" summary="Updated ciphers">
       <created>1589708408324</created>
@@ -197,7 +201,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/C_V_Encryption_System$main.coverage" NAME="main Coverage Results" MODIFIED="1589622428248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/C_V_Encryption_System$ciphers.coverage" NAME="ciphers Coverage Results" MODIFIED="1589636683082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Caesar_and_Vigenere_Encryption_System_Using_Python_GUI$main.coverage" NAME="main Coverage Results" MODIFIED="1589963936214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Caesar_and_Vigenere_Encryption_System_Using_Python_GUI$main.coverage" NAME="main Coverage Results" MODIFIED="1589975541734" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Caesar_and_Vigenere_Encryption_System_Using_Python_GUI$ciphers.coverage" NAME="ciphers Coverage Results" MODIFIED="1589900076918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
