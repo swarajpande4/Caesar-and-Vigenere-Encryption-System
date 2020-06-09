@@ -49,6 +49,24 @@ def resetButtonFunction():
     resultText.delete("1.0", "end")
 
 
+# Execute Button Hover effect Functions
+def executeEnterHover(event):
+    executeButton['background'] = 'green'
+
+
+def executeLeaveHover(event):
+    executeButton['background'] = 'SystemButtonFace'
+
+
+# Reset Button Hover effect Functions
+def resetEnterHover(event):
+    resetButton['background'] = 'red'
+
+
+def resetLeaveHover(event):
+    resetButton['background'] = 'SystemButtonFace'
+
+
 # Creating the Window
 root = Tk()
 root.title("C&V Encryption System")
@@ -56,7 +74,7 @@ root.geometry("600x750")
 root.resizable(False, False)
 
 # Setting the Icon
-root.iconbitmap('C:/Caesar-and-Vigenere-Encryption-System-Using-Python-GUI/img/icon.ico')
+root.iconbitmap('img/icon.ico')
 
 # Heading Label
 headingFont = ("Verdana", 20, "bold")
@@ -66,63 +84,159 @@ headingLabel.pack(side=TOP)
 # General Font
 generalFont = ("Times", 12)
 
+# Button Font
+buttonFont = ("Times", 12, "bold")
+
 # Cipher Choice
 cipherChoice = IntVar()
 cipherChoice.set("1")
-cipherChoiceLabel = Label(root, text="Choose Cipher : ", font=generalFont, anchor='w')
+cipherChoiceLabel = Label(
+    root,
+    text="Choose Cipher : ",
+    font=generalFont,
+    anchor='w'
+)
 cipherChoiceLabel.place(x=170, y=50)
-caesarCipherRadiobutton = Radiobutton(root, text="Caesar Cipher", font=generalFont, variable=cipherChoice, value=1)
+caesarCipherRadiobutton = Radiobutton(
+    root,
+    text="Caesar Cipher",
+    font=generalFont,
+    variable=cipherChoice,
+    value=1
+)
 caesarCipherRadiobutton.place(x=290, y=49)
-vigenereCipherRadiobutton = Radiobutton(root, text="Vigenere Cipher", font=generalFont, variable=cipherChoice, value=2)
+vigenereCipherRadiobutton = Radiobutton(
+    root,
+    text="Vigenere Cipher",
+    font=generalFont,
+    variable=cipherChoice,
+    value=2
+)
 vigenereCipherRadiobutton.place(x=290, y=74)
+
 
 # Operation Choice
 operationChoice = IntVar()
 operationChoice.set("1")
-operationChoiceLabel = Label(root, text="Choose Operation : ", font=generalFont, anchor='w')
+operationChoiceLabel = Label(
+    root,
+    text="Choose Operation : ",
+    font=generalFont,
+    anchor='w'
+)
 operationChoiceLabel.place(x=151, y=119)
-encryptionRadiobutton = Radiobutton(root, text="Encryption", font=generalFont, variable=operationChoice, value=1)
+encryptionRadiobutton = Radiobutton(
+    root,
+    text="Encryption",
+    font=generalFont,
+    variable=operationChoice,
+    value=1
+)
 encryptionRadiobutton.place(x=290, y=118)
-decryptionRadiobutton = Radiobutton(root, text="Decryption", font=generalFont, variable=operationChoice, value=2)
+decryptionRadiobutton = Radiobutton(
+    root,
+    text="Decryption",
+    font=generalFont,
+    variable=operationChoice,
+    value=2
+)
 decryptionRadiobutton.place(x=290, y=143)
 
+
 # Enter Text Field
-enterTextLabel = Label(root, text="Enter Text : ", font=generalFont, anchor='w')
+enterTextLabel = Label(
+    root,
+    text="Enter Text : ",
+    font=generalFont,
+    anchor='w'
+)
 enterTextLabel.place(x=30, y=200)
 enterText = Text(root, height=8, width=67)
 enterText.place(x=30, y=225)
 
+
 # Enter Key Field
-enterKeyLabel = Label(root, text="Enter Key : ", font=generalFont, anchor='w')
+enterKeyLabel = Label(
+    root,
+    text="Enter Key : ",
+    font=generalFont,
+    anchor='w'
+)
 enterKeyLabel.place(x=30, y=425)
 enterKey = Text(root, height=1, width=67)
 enterKey.place(x=30, y=450)
 
+
 # Key Instructions Labels
 instructionFont = ("Times", 12, "bold")
-caesarInstructionLabel = Label(root, text="Note : Caesar Numeric Key = Integer", font=instructionFont, anchor='w')
+caesarInstructionLabel = Label(
+    root,
+    text="Note : Caesar Numeric Key = Integer",
+    font=instructionFont,
+    anchor='w'
+)
 caesarInstructionLabel.place(x=30, y=365)
-vigenereInstructionLabel = Label(root, text="Vigenere Text Key = String", font=instructionFont, anchor='w')
+vigenereInstructionLabel = Label(
+    root,
+    text="Vigenere Text Key = String",
+    font=instructionFont,
+    anchor='w'
+)
 vigenereInstructionLabel.place(x=76, y=389)
 
+
 # Execute Button
-executeButton = Button(root, text="Execute", font=generalFont, relief=RAISED, command=executeButtonFunction)
-executeButton.place(x=259, y=480)
+executeButton = Button(
+    root,
+    text="Execute",
+    font=buttonFont,
+    height=2,
+    width=10,
+    borderwidth=3,
+    relief=RAISED,
+    command=executeButtonFunction
+    )
+executeButton.place(x=239, y=480)
+executeButton.bind("<Enter>", executeEnterHover)
+executeButton.bind("<Leave>", executeLeaveHover)
+
 
 # Result Text Field
-resultTextLabel = Label(root, text="Result Text : ", font=generalFont, anchor='w')
+resultTextLabel = Label(
+    root,
+    text="Result Text : ",
+    font=generalFont,
+    anchor='w'
+)
 resultTextLabel.place(x=30, y=515)
 resultText = Text(root, height=8, width=67)
 resultText.place(x=30, y=540)
 
+
 # Reset Button
-resetButton = Button(root, text="Reset", font=generalFont, relief=RAISED, command=resetButtonFunction)
-resetButton.place(x=265, y=680)
+resetButton = Button(
+    root,
+    text="Reset",
+    font=buttonFont,
+    height=2,
+    width=10,
+    borderwidth=3,
+    relief=RAISED,
+    command=resetButtonFunction
+    )
+resetButton.place(x=240, y=680)
+resetButton.bind("<Enter>", resetEnterHover)
+resetButton.bind("<Leave>", resetLeaveHover)
+
 
 # Credit Label
 creditFont = ("Verdana", 8, "bold")
-creditLabel = Label(root, text="Developed by : Swaraj Pande", font=creditFont, anchor='e')
+creditLabel = Label(
+    root,
+    text="Developed by : Swaraj Pande",
+    font=creditFont,
+    anchor='e'
+)
 creditLabel.place(x=400, y=730)
 
 root.mainloop()
-
