@@ -74,7 +74,7 @@ root.geometry("600x750")
 root.resizable(False, False)
 
 # Setting the Icon
-root.iconbitmap('img/icon.ico')
+root.iconbitmap('D:\\Programming\\Python\\Caesar-and-Vigenere-Encryption-System-Using-Python-GUI\\img\\icon.ico')
 
 # Heading Label
 headingFont = ("Verdana", 20, "bold")
