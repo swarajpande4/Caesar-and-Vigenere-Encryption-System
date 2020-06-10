@@ -68,11 +68,40 @@ def resetLeaveHover(event):
     resetButton['background'] = 'SystemButtonFace'
 
 
+# Right Click Menu Functions
+def rightClickMenu(event):
+    global menu
+    menu = Menu(root, tearoff=0)
+    menu.add_command(label="Cut")
+    menu.add_command(label="Copy")
+    menu.add_command(label="Paste")
+
+
+def showRightClickMenu(event):
+    eventWidget = event.widget
+    menu.entryconfigure(
+        "Cut",
+        command=lambda: eventWidget.event_generate("<<Cut>>")
+    )
+    menu.entryconfigure(
+        "Copy",
+        command=lambda: eventWidget.event_generate("<<Copy>>")
+    )
+    menu.entryconfigure(
+        "Paste",
+        command=lambda: eventWidget.event_generate("<<Paste>>")
+    )
+    menu.tk.call("tk_popup", menu, event.x_root, event.y_root)
+
+
 # Creating the Window
 root = Tk()
 root.title("C&V Encryption System")
 root.geometry("600x750")
 root.resizable(False, False)
+
+# Calling rightClick Menu
+rightClickMenu(root)
 
 # Setting the Icon
 root.iconbitmap(os.path.abspath('img\\icon.ico'))
@@ -239,5 +268,8 @@ creditLabel = Label(
     anchor='e'
 )
 creditLabel.place(x=400, y=730)
+
+# Binding Right Click menu to Right button (Mouse)
+root.bind_class("Text", "<Button-3><ButtonRelease-3>", showRightClickMenu)
 
 root.mainloop()
