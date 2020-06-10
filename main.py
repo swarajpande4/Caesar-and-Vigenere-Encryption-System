@@ -224,7 +224,7 @@ resetButton = Button(
     borderwidth=3,
     relief=RAISED,
     command=resetButtonFunction
-    )
+)
 resetButton.place(x=240, y=680)
 resetButton.bind("<Enter>", resetEnterHover)
 resetButton.bind("<Leave>", resetLeaveHover)
