@@ -8,6 +8,7 @@
 from ciphers import *
 from tkinter import *
 from tkinter import messagebox
+import os
 
 
 # Execute Button Function
@@ -74,7 +75,7 @@ root.geometry("600x750")
 root.resizable(False, False)
 
 # Setting the Icon
-root.iconbitmap('D:\\Programming\\Python\\Caesar-and-Vigenere-Encryption-System-Using-Python-GUI\\img\\icon.ico')
+root.iconbitmap(os.path.abspath('img\\icon.ico'))
 
 # Heading Label
 headingFont = ("Verdana", 20, "bold")
