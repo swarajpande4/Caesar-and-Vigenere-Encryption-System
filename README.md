@@ -2,6 +2,12 @@
 
 This system encrypts and decrypts Caesar and Vigenere Ciphers using Python.
 
+## To Build
+Execute the following in a Terminal.
+```bash
+$ python3 main.py
+```
+
 ## Layout
 <img src = 'img/img.png'>
 
