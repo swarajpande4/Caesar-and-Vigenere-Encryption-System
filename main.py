@@ -8,6 +8,7 @@
 from ciphers import *
 from tkinter import *
 from tkinter import messagebox
+from tkinter.scrolledtext import ScrolledText
 import os
 
 
@@ -104,7 +105,8 @@ root.resizable(False, False)
 rightClickMenu(root)
 
 # Setting the Icon
-root.iconbitmap(os.path.abspath('img\\icon.ico'))
+# root.iconbitmap(os.path.abspath('img\\icon.ico'))
+root.iconbitmap(".\\img\\icon.ico")
 
 # Heading Label
 headingFont = ("Verdana", 20, "bold")
@@ -181,7 +183,7 @@ enterTextLabel = Label(
     anchor='w'
 )
 enterTextLabel.place(x=30, y=200)
-enterText = Text(root, height=8, width=67)
+enterText = ScrolledText(root, height=8, width=67)
 enterText.place(x=30, y=225)
 
 
@@ -239,7 +241,7 @@ resultTextLabel = Label(
     anchor='w'
 )
 resultTextLabel.place(x=30, y=515)
-resultText = Text(root, height=8, width=67)
+resultText = ScrolledText(root, height=8, width=67)
 resultText.place(x=30, y=540)
 
 
