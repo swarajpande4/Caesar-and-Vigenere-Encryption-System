@@ -7,6 +7,17 @@ Execute the following in a Terminal.
 ```bash
 $ python3 main.py
 ```
+<br>
+
+## Files and Directory Structure 
+    .
+    ├── dist
+        └── C&V.exe         # Executable
+    ├── img
+        └── ...             # Images and icon files
+    ├── README.md
+    ├── ciphers.py          # Implementation of algorithms 
+    └── main.py             # Calls the functions from ciphers.py and uses Tkinter library
 
 ## Layout
 <img src = 'img/img.png'>
