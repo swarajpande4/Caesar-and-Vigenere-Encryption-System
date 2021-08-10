@@ -159,7 +159,6 @@ def columnarDecrypt(ciphertext, key):
 
     for r in box:
         for k in keyList:
-            print(sortedMessage)
             sortedMessage.append(r[sortedKeyList.index(k)])
 
     return ''.join(sortedMessage)
