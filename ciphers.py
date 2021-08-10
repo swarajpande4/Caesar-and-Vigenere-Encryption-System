@@ -104,6 +104,8 @@ def vigenereDecrypt(encrypted, key):
 
     return text
 
+
+# Functions to Columnar Transform a String
 def columnarEncrypt(text, key):
 
     text = text.replace(' ', '')
@@ -136,6 +138,7 @@ def columnarEncrypt(text, key):
         ciphertext.extend(line)
     
     return ''.join(ciphertext)
+
 
 def columnarDecrypt(ciphertext, key):
 
