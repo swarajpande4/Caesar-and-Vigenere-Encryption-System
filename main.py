@@ -2,7 +2,7 @@
 #
 #   C&V Encryption System (Caesar and Vigenère Cipher)
 #
-#   Date : 20 May 2020
+#   Date : 10 August 2021
 
 
 from ciphers import *
@@ -42,7 +42,7 @@ def executeButtonFunction():
                 resultText.insert("1.0", encrypted)
             elif operationChoice.get() == 2:
                 decrypted = columnarDecrypt(inputText, inputKey)
-                resultText.insert("1.0", encrypted)
+                resultText.insert("1.0", decrypted)
 
     # Invalid Key
     except:
@@ -265,17 +265,6 @@ resetButton = Button(
 resetButton.place(x=240, y=680)
 resetButton.bind("<Enter>", resetEnterHover)
 resetButton.bind("<Leave>", resetLeaveHover)
-
-
-# Credit Label
-creditFont = ("Verdana", 8, "bold")
-creditLabel = Label(
-    root,
-    text="Developed by : Swaraj Pande",
-    font=creditFont,
-    anchor='e'
-)
-creditLabel.place(x=400, y=730)
 
 # Binding Right Click menu to Right button (Mouse)
 root.bind_class("Text", "<Button-3><ButtonRelease-3>", showRightClickMenu)
