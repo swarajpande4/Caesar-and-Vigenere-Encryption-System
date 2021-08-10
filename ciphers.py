@@ -103,3 +103,65 @@ def vigenereDecrypt(encrypted, key):
             text = text + currChar
 
     return text
+
+def columnarEncrypt(text, key, padding="Spaces"):
+
+
+    # Remove Spaces from text. 
+    text = text.replace(" ", "")
+
+    # Pad text if columns are not filled by either using spaces at the end or by adding random characters.
+    while (len(text) % len(key) != 0):
+
+        if padding == "Spaces":
+            text += " "
+        elif padding == "Random":
+            text += random.choice(string.ascii_letters)
+        else:
+            raise Exception("Padding setting is not valid.")
+
+    rowLen = len(key)
+    colLen = len(text) // len(key)
+
+    # Split text into sections of same size as key
+    textSplit = ([text[i:i + rowLen] for i in range(0, len(text), rowLen)])
+
+    # Get the positions of characters according to key
+    order = [sorted(key).index(c) for c in key]
+    charPos = [order.index(i) for i in range(len(order))]
+
+    ciphertext = ""
+
+    # Add characters to the ciphertext
+    for x in charPos:
+
+        for i in range(colLen):
+
+            ciphertext += textSplit[i][x]
+
+        ciphertext += " "
+
+    return ciphertext
+
+def columnarDecrypt(ciphertext, key):
+
+    rowLen = len(key)
+    colLen = len(ciphertext) // len(key)
+
+    # Split text into sections of same size as key
+    textSplit = ([ciphertext[i:i + rowLen] for i in range(0, len(ciphertext), rowLen)])
+
+    # Rearrange columns into original positions
+    order = [sorted(key).index(c) for c in key]
+    reformedColumns = [textSplit[i] for i in order]
+
+    text = ""
+
+    # Add characters to the text
+    for i in range(colLen):
+
+        for j in range(rowLen):
+
+            text += reformedColumns[j][i]
+
+    return text
