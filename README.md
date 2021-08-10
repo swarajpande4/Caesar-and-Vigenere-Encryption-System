@@ -3,10 +3,12 @@
 This system encrypts and decrypts Caesar and Vigenere Ciphers using Python.
 
 ## To Build
-Execute the following in a Terminal.
+In Windows, execute the following in cmd.
 ```bash
 $ python3 main.py
 ```
+or simply just run main.py on any IDE.
+
 <br>
 
 ## Files and Directory Structure 
@@ -18,9 +20,6 @@ $ python3 main.py
     ├── README.md
     ├── ciphers.py          # Implementation of algorithms 
     └── main.py             # Calls the functions from ciphers.py and uses Tkinter library
-
-## Layout
-<img src = 'img/img.png'>
 
 ## Sources 
 https://en.wikipedia.org/wiki/Caesar_cipher \
