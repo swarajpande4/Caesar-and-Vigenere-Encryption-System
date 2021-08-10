@@ -3,7 +3,7 @@
 #   File Name : ciphers
 #
 #   Date: 20 May 2020
-
+from math import ceil
 
 # Function to Caesar Encrypt a String
 # The Same function can be used to Decrypt a Caesar Cipher using key = 26 - key
@@ -104,64 +104,62 @@ def vigenereDecrypt(encrypted, key):
 
     return text
 
-def columnarEncrypt(text, key, padding="Spaces"):
+def columnarEncrypt(text, key):
 
+    text = text.replace(' ', '')
 
-    # Remove Spaces from text. 
-    text = text.replace(" ", "")
+    rows = len(text)/len(key)
+    text = text.ljust(ceil(rows) * len(key), 'X')
 
-    # Pad text if columns are not filled by either using spaces at the end or by adding random characters.
-    while (len(text) % len(key) != 0):
+    text = list(text)
+    box = []
 
-        if padding == "Spaces":
-            text += " "
-        elif padding == "Random":
-            text += random.choice(string.ascii_letters)
-        else:
-            raise Exception("Padding setting is not valid.")
+    i = 0
+    for row in range(ceil(rows)):
+        box.append(text[i: i + len(key)])
+        i += len(key)
+ 
+    priority = [ord(val) for val in list(key)]
+    boxEncrypted = []
 
-    rowLen = len(key)
-    colLen = len(text) // len(key)
+    for r in box:
+        rowTuples = []
+        for c in range(len(r)):
+            rowTuples.append((r[c], priority[c]))
 
-    # Split text into sections of same size as key
-    textSplit = ([text[i:i + rowLen] for i in range(0, len(text), rowLen)])
+        rowTuples.sort(key = lambda x: x[1])
+        encryptedRow = [v[0] for v in rowTuples]
+        boxEncrypted.append(encryptedRow)
 
-    # Get the positions of characters according to key
-    order = [sorted(key).index(c) for c in key]
-    charPos = [order.index(i) for i in range(len(order))]
-
-    ciphertext = ""
-
-    # Add characters to the ciphertext
-    for x in charPos:
-
-        for i in range(colLen):
-
-            ciphertext += textSplit[i][x]
-
-        ciphertext += " "
-
-    return ciphertext
+    ciphertext = []
+    for line in boxEncrypted:
+        ciphertext.extend(line)
+    
+    return ''.join(ciphertext)
 
 def columnarDecrypt(ciphertext, key):
 
-    rowLen = len(key)
-    colLen = len(ciphertext) // len(key)
+    ciphertext = ciphertext.replace(' ', '')
+    
+    rows = len(ciphertext) / len(key)
+    ciphertext = list(ciphertext)
+    
+    box = []
+    i = 0
+    for row in range(ceil(rows)):
+        box.append(ciphertext[i: i + len(key)])
+        i += len(key)
+    
+    
+    keyList = list(key)  
+    sortedKeyList = keyList
+    sortedKeyList = sorted(keyList)
 
-    # Split text into sections of same size as key
-    textSplit = ([ciphertext[i:i + rowLen] for i in range(0, len(ciphertext), rowLen)])
+    sortedMessage = []
 
-    # Rearrange columns into original positions
-    order = [sorted(key).index(c) for c in key]
-    reformedColumns = [textSplit[i] for i in order]
+    for r in box:
+        for k in keyList:
+            print(sortedMessage)
+            sortedMessage.append(r[sortedKeyList.index(k)])
 
-    text = ""
-
-    # Add characters to the text
-    for i in range(colLen):
-
-        for j in range(rowLen):
-
-            text += reformedColumns[j][i]
-
-    return text
+    return ''.join(sortedMessage)
