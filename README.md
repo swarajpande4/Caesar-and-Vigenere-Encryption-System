@@ -23,5 +23,5 @@ or simply just run main.py on any IDE.
 
 ## Sources 
 https://en.wikipedia.org/wiki/Caesar_cipher \
-https://en.wikipedia.org/wiki/Vigenère_cipher
-
+https://en.wikipedia.org/wiki/Vigenère_cipher \
+https://en.wikipedia.org/wiki/Transposition_cipher
